@@ -1,0 +1,14 @@
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\config\JdbcConfig.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\service\BankService.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\entity\Worker.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\config\properties\HibernateProperties.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\entity\Bank.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\entity\BankAccount.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\controller\BankController.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\config\properties\OracleDbProperties.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\config\HibernateConfig.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\config\properties\CommonDbProperties.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\repository\BankRepository.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\runner\Application.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\entity\Client.java
+C:\Users\Egor\IdeaProjects\SpringInAction\src\main\java\ru\bank\organization\repository\JdbcBankRepository.java

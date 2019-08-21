@@ -1,0 +1,14 @@
+ru\bank\organization\service\BankService.class
+ru\bank\organization\config\properties\HibernateProperties.class
+ru\bank\organization\entity\Bank.class
+ru\bank\organization\controller\BankController.class
+ru\bank\organization\entity\Client.class
+ru\bank\organization\runner\Application.class
+ru\bank\organization\repository\JdbcBankRepository.class
+ru\bank\organization\entity\Worker.class
+ru\bank\organization\config\HibernateConfig.class
+ru\bank\organization\repository\BankRepository.class
+ru\bank\organization\config\properties\OracleDbProperties.class
+ru\bank\organization\config\properties\CommonDbProperties.class
+ru\bank\organization\config\JdbcConfig.class
+ru\bank\organization\entity\BankAccount.class
