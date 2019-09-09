@@ -1,16 +1,13 @@
 package ru.bank.organization.runner;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import ru.bank.organization.config.JdbcConfig;
-import ru.bank.organization.config.properties.CommonDbProperties;
+import ru.bank.organization.config.RootConfig;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses = {JdbcConfig.class})
+@ComponentScan(basePackageClasses = {RootConfig.class})
 public class Application {
 
     public static void main(String[] args) {

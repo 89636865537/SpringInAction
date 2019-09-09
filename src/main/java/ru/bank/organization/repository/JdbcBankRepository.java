@@ -9,9 +9,9 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.support.TransactionTemplate;
 import ru.bank.organization.entity.Bank;
 
-import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 import java.util.Optional;
 
@@ -19,21 +19,25 @@ import java.util.Optional;
 @Repository("JdbcBankRepository")
 public class JdbcBankRepository extends NamedParameterJdbcDaoSupport implements BankRepository {
 
-    @Autowired
-    @Qualifier("dataSource")
-    DataSource dataSource;
-
-
     private static final Logger log = LoggerFactory.getLogger(JdbcBankRepository.class);
 
-    @PostConstruct
-    public void setParentDataSource() {
+
+    DataSource dataSource;
+    TransactionTemplate transactionTemplate;
+
+
+    @Autowired
+    public JdbcBankRepository(@Qualifier("dataSourceJdbc") DataSource dataSource,
+                              @Qualifier("transactionTemplate") TransactionTemplate transactionTemplate) {
+        this.dataSource = dataSource;
+        this.transactionTemplate = transactionTemplate;
         super.setDataSource(dataSource);
     }
 
 
     @Override
     public Optional<Long> saveBank(Optional<Bank> bank) {
+
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
         namedParameters.addValue("bankName", bank.map(Bank::getName).orElseThrow(() -> {
@@ -43,10 +47,12 @@ public class JdbcBankRepository extends NamedParameterJdbcDaoSupport implements 
         final KeyHolder keyHolder = new GeneratedKeyHolder();
         String sql = "INSERT INTO BANK ( NAME) VALUES( :bankName)";
 
-        Long result = Optional.of(super.getNamedParameterJdbcTemplate().update(sql, namedParameters)).map(Integer::longValue).orElseThrow(() -> {
+
+       Long result = Optional.of(super.getNamedParameterJdbcTemplate().update(sql, namedParameters)).map(Integer::longValue).orElseThrow(() -> {
             log.info("cannot save Bank");
             return new IllegalArgumentException();
         });
+
         return Optional.of(result);
     }
 

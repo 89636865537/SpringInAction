@@ -4,14 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @ToString
 @Entity
-public class BankAccount {
+@Table(name = "BANK_ACCOUNT")
+public class BankAccount implements BankAbstraction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,6 +27,7 @@ public class BankAccount {
 
     @Getter
     @Setter
+    @Column(name = "AMOUNT_OF_CREDIT")
     private Double amountOfCredit;
 
 

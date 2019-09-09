@@ -3,27 +3,24 @@ package ru.bank.organization.config.properties;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+import java.util.List;
 
 @Configuration
-@ToString
-public class CommonDbProperties {
+@PropertySource(value = "classpath:cache/simple.properties")
+@ConfigurationProperties(prefix = "spring.cache")
+public class SimpleCacheProperties {
 
     @Getter
     @Setter
-    private String driver;
-    @Getter
-    @Setter
-    private String url;
-    @Getter
-    @Setter
-    private String userName;
-    @Getter
-    @Setter
-    private String password;
+    public List<String> cacheNames;
+
+    public List<String> getCacheNames() {
+        return cacheNames;
+    }
+
 
 }

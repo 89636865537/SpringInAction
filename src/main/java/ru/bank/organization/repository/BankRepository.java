@@ -15,7 +15,4 @@ public interface BankRepository {
     Optional<Bank> getBankById(Long bankId);
 
 
-
-
-
 }
